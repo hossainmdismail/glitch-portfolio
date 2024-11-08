@@ -1,0 +1,117 @@
+.rich-content-container {
+    width: 100%;
+    overflow: hidden;
+    display: grid
+}
+
+/* Ensure all content within the container remains responsive */
+.rich-content-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.rich-content-container figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.rich-content-container figcaption {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.rich-content-container p,
+.rich-content-container h1,
+.rich-content-container h2,
+.rich-content-container h3,
+.rich-content-container h4,
+.rich-content-container h5,
+.rich-content-container h6 {
+    font-family: inherit;
+    color: inherit;
+    margin: 1em 0;
+    line-height: 1.5;
+}
+
+.rich-content-container h1 {
+    font-size: 1.8em;
+}
+
+.rich-content-container h2 {
+    font-size: 1.6em;
+}
+
+.rich-content-container h3 {
+    font-size: 1.4em;
+}
+
+.rich-content-container h4,
+.rich-content-container h5,
+.rich-content-container h6 {
+    font-size: 1.2em;
+}
+
+.rich-content-container ul,
+.rich-content-container ol {
+    padding-left: 20px;
+    margin: 1em 0;
+}
+
+.rich-content-container ul,
+.rich-content-container ol li {
+    margin: 1em 0;
+    list-style: auto;
+}
+
+.rich-content-container blockquote {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    border-left: 4px solid #ccc;
+    color: #ffffff;
+    background-color: #8b63ff21;
+    border-radius: 5px;
+}
+
+.rich-content-container pre {
+    background-color: #8b63ff21;
+    padding: 1em;
+    border-radius: 5px;
+    word-wrap: break-word;
+    white-space: break-spaces;
+}
+
+attachment__caption {
+    display: none;
+}
+
+.rich-content-container code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.rich-content-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.rich-content-container th,
+.rich-content-container td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+}
+
+
+@media (max-width: 767px) {
+    .content-d .list-social {
+        display: none;
+    }
+}
