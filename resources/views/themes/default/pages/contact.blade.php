@@ -13,7 +13,7 @@
                             <h4 class="title">Contact</h4>
 
                             <ul class="breacrumb">
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
                                 <li>
                                     <p>Contact</p>
                                 </li>

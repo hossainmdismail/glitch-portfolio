@@ -64,7 +64,6 @@
                                 </li>
                                 <li><a href="{{ route('about') }}">About Us</a></li>
                                 <li><a href="{{ route('contact') }}">Support</a></li>
-                                <li><a href="#">Refund Policv</a></li>
                             </ul>
 
                             <div class="widget">

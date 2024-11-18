@@ -35,7 +35,8 @@
                                                     fill="#FFFFFF" />
                                             </svg>
                                             <div>
-                                                <a href="#">{{ $project->title }}</a>
+                                                <a
+                                                    href="{{ route('project.view', $project->id) }}">{{ $project->title }}</a>
                                                 <h6 class="price">{{ $project->created_at->format('d-m y') }}</h6>
                                             </div>
                                         </div>
@@ -308,12 +309,12 @@
                     <div class="col-xl-3 col-md-6">
                         <div class="project-box">
                             <div class="image">
-                                <a href="nft.html">
+                                <a>
                                     <img src="{{ Storage::url($product->thumbnail) }}" alt="">
                                 </a>
                             </div>
                             <div class="content">
-                                <a href="nft.html" class="h5 title">{{ $product->title }}</a>
+                                <a class="h5 title">{{ $product->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -445,7 +446,7 @@
                         </div>
 
                         <!-- <div class="icon"></div>
-                                                                                                                                                                                                                                                                                                                                                                                        <div class="icon bottom"></div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="icon bottom"></div> -->
 
 
                     </div>
@@ -477,7 +478,7 @@
                     <div class="col-xl-3 col-md-6">
                         <div class="team-box">
                             <div class="image">
-                                <a href="team.html">
+                                <a>
                                     <img src="{{ Storage::url($team->profile) }}" alt="">
                                 </a>
 
@@ -506,7 +507,7 @@
                                 @endif
                             </div>
                             <div class="content">
-                                <a href="team.html" class="h5 name">Jane Cooper</a>
+                                <a class="h5 name">Jane Cooper</a>
                                 <p class="postion">
                                     Founder & CEO
                                 </p>
@@ -1081,7 +1082,7 @@
                     <div class="col-md-4">
                         <div class="blog-box">
                             <div class="image">
-                                <a href="blog-details.html">
+                                <a>
                                     <img src="{{ Storage::url($post->thumbnail) }}" alt="">
                                 </a>
                             </div>
@@ -1097,8 +1098,7 @@
                                         {{ $post->created_at->format('D m, Y') }}</p>
                                 </div>
 
-                                <a href="{{ route('blog.view', $post->slug) }}"
-                                    class="h5 title">{{ $post->title }}</a>
+                                <a href="{{ route('blog.view', $post->slug) }}" class="h5 title">{{ $post->title }}</a>
                             </div>
                         </div>
                     </div>

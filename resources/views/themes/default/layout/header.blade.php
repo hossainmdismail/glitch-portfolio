@@ -18,7 +18,7 @@
                                         <li class="menu-item menu-current-item">
                                             <a href="{{ route('home') }}">Home</a>
                                         </li>
-                                        <li class="menu-item">
+                                        {{-- <li class="menu-item">
                                             <a href="#">Explore</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item"><a href="nft.html">NFTs</a></li>
@@ -35,7 +35,7 @@
                                                 </li>
 
                                             </ul>
-                                        </li>
+                                        </li> --}}
                                         <li class="menu-item">
                                             <a href="{{ route('about') }}">About</a>
                                         </li>
@@ -57,7 +57,7 @@
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </a> --}}
-                                <a href="contact.html" class="action-btn"><span>Join Now</span></a>
+                                <a href="{{ route('contact') }}" class="action-btn"><span>Join Now</span></a>
                             </div>
                         </div>
                     </div>

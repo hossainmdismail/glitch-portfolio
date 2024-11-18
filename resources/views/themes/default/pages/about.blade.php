@@ -13,7 +13,7 @@
                             <h4 class="title">About us</h4>
 
                             <ul class="breacrumb">
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
                                 <li>
                                     <p>About us</p>
                                 </li>
@@ -577,7 +577,7 @@
                         <div class="content">
                             <h4 class="heading">Create your NFT portfolio</h4>
                             <p>Get udpated with news, tips & tricks</p>
-                            <a href="contact.html" class="action-btn"><span>Join Now</span></a>
+                            <a href="{{ route('contact') }}" class="action-btn"><span>Join Now</span></a>
 
                         </div>
                         <img src="{{ asset('themes/default') }}/assets/images/layouts/create.png" alt="">
