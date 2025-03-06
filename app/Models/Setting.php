@@ -14,6 +14,8 @@ class Setting extends Model
         'address',
         'number',
         'link',
+        'short_description',
+        'description',
         'logo',
         'fav',
         'status'

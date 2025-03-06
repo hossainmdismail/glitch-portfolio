@@ -14,11 +14,15 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title', 240);
+            $table->string('slug', 240);
             $table->string('thumbnail', 120);
             $table->string('tech', 400); //images
             $table->bigInteger('liked_by');
             $table->decimal('price'); //Project price
             $table->string('link')->nullable(); //Project link
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description', 600)->nullable();
+            $table->string('seo_tags', 400)->nullable();
             $table->timestamps();
         });
     }

@@ -7,23 +7,24 @@ use Filament\Tables;
 use App\Models\Project;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\BadgeColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\ProjectResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProjectResource\RelationManagers;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Group;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Toggle;
-use Filament\Tables\Columns\ImageColumn;
 
 class ProjectResource extends Resource
 {
@@ -40,7 +41,17 @@ class ProjectResource extends Resource
                         TextInput::make('title')
                             ->required()
                             ->placeholder('Make a title')
-                            ->maxLength(155),
+                            ->maxLength(155)
+                            ->reactive()
+                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))), // Automatically sets the slug
+
+
+                        TextInput::make('slug')
+                            ->label('Slug')
+                            ->unique(ignoreRecord: true)
+                            ->required()
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         TagsInput::make('services')
                             ->placeholder('Click enter to make services'),
                         TextInput::make('client')

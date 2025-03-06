@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('address');
             $table->string('number');
+            $table->string('short_description', 500);
+            $table->text('description');
             $table->string('link');
             $table->string('logo');
             $table->enum('status', [

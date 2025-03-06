@@ -13,6 +13,9 @@ class Product extends Model
         'liked_by',
         'price',
         'link',
+        'seo_title',
+        'seo_description',
+        'seo_tags',
     ];
 
     // Define casts for specific fields

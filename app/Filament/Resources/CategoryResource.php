@@ -27,6 +27,11 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Blog';
+    }
+
     public static function form(Form $form): Form
     {
         return $form

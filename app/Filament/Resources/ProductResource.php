@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
@@ -19,12 +20,15 @@ use Filament\Tables\Columns\BooleanColumn;
 use App\Filament\Resources\ProductResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductResource\RelationManagers;
+use Filament\Forms\Components\Textarea;
 
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
+
+    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
@@ -78,9 +82,9 @@ class ProductResource extends Resource
                             ->imageResizeMode('cover'),
 
                         FileUpload::make('tech')
-                            ->multiple() // Enables multiple file uploads
+                            // ->multiple() // Enables multiple file uploads
                             ->disk('public')
-                            ->label('Used Tech logo')
+                            ->label('Use Tech logo')
                             ->directory('products/tech')
                             ->imageEditor()
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
@@ -89,6 +93,21 @@ class ProductResource extends Resource
                     ])->columnSpan(1),
 
                 ])->columns(4),
+                Section::make('Meta Information')->schema([
+                    Group::make()->schema([
+                        TextInput::make('seo_title')
+                            ->placeholder('Meta Title')
+                            ->columnSpanFull()
+                            ->maxLength(240),
+                        Textarea::make('seo_description')
+                            ->placeholder('Meta Description')
+                            ->columnSpanFull()
+                            ->maxLength(600),
+                        TagsInput::make('seo_tags')
+                            ->label('Meta Tags')
+                            ->placeholder('Enter to separated tags'),
+                    ])->columns(1),
+                ]),
             ]);
     }
 

@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $configData->name }}</title>
+    {{-- <title>{{ $configData->name }}</title> --}}
 
     <link rel="stylesheet" href="{{ asset('themes/default') }}/app/swiper/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="{{ asset('themes/default') }}/app/dist/aos.css">
     <link rel="stylesheet" href="{{ asset('themes/default') }}/app/dist/app.css">
-
+    {!! SEO::generate(true) !!}
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="{{ Storage::url($configData->fav) }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('themes/default') }}/assets/images/logo/favicon.png">
     @yield('style')
-
 </head>
 
 <body class="home-main header-fixed">

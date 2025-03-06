@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -24,6 +25,11 @@ class SettingResource extends Resource
     protected static ?string $model = Setting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Settings';
+    }
+
 
     public static function form(Form $form): Form
     {
@@ -50,6 +56,14 @@ class SettingResource extends Resource
                     TextInput::make('address')
                         ->required()
                         ->placeholder('Street / City / Country')
+                        ->columnSpan(2),
+                    Textarea::make('short_description')
+                        ->required()
+                        ->placeholder('Short Description')
+                        ->columnSpan(2),
+                    Textarea::make('description')
+                        ->required()
+                        ->placeholder('Description')
                         ->columnSpan(2),
                     Select::make('status')->options([
                         'active' => 'Active',

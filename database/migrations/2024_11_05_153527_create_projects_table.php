@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title', 155);
+            $table->string('slug', 155);
             $table->string('thumbnail', 120);
             $table->string('services', 300); // array
             $table->longText('content');
